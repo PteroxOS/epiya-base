@@ -1,0 +1,18 @@
+{
+  "id": "chat-1767091987706-tgmxv7i",
+  "createdAt": "2025-12-30T10:53:11.061Z",
+  "updatedAt": "2025-12-30T10:53:11.062Z",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hai anda siapa",
+      "timestamp": "2025-12-30T10:53:11.060Z",
+      "id": "msg-1767091991062-56mzm782b"
+    }
+  ],
+  "metadata": {
+    "totalMessages": 1,
+    "userMessages": 1,
+    "assistantMessages": 0
+  }
+}

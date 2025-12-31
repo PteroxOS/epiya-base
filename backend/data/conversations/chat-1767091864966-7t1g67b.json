@@ -1,0 +1,36 @@
+{
+  "id": "chat-1767091864966-7t1g67b",
+  "createdAt": "2025-12-30T10:51:06.852Z",
+  "updatedAt": "2025-12-30T10:51:17.829Z",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hai",
+      "timestamp": "2025-12-30T10:51:06.852Z",
+      "id": "msg-1767091866856-cealpfoo7"
+    },
+    {
+      "role": "assistant",
+      "content": "Hai! Bagaimana bisa saya membantu Anda hari ini?",
+      "timestamp": "2025-12-30T10:51:08.945Z",
+      "id": "msg-1767091868948-hgdf81720"
+    },
+    {
+      "role": "user",
+      "content": "anda siapa",
+      "timestamp": "2025-12-30T10:51:14.647Z",
+      "id": "msg-1767091874647-v2m4az1ut"
+    },
+    {
+      "role": "assistant",
+      "content": "Saya adalah EPIYA-AI, asisten AI yang ramah dirancang untuk memberikan bantuan yang akurat dan bermanfaat. Saya siap membantu Anda dengan berbagai pertanyaan, tugas, atau kebutuhan lainnya. Apa yang bisa saya bantu untuk Anda hari ini?",
+      "timestamp": "2025-12-30T10:51:17.826Z",
+      "id": "msg-1767091877829-3gcqbcptu"
+    }
+  ],
+  "metadata": {
+    "totalMessages": 4,
+    "userMessages": 2,
+    "assistantMessages": 2
+  }
+}

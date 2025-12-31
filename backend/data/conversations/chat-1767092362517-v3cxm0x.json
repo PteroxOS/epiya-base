@@ -1,0 +1,24 @@
+{
+  "id": "chat-1767092362517-v3cxm0x",
+  "createdAt": "2025-12-30T10:59:22.527Z",
+  "updatedAt": "2025-12-30T10:59:28.345Z",
+  "messages": [
+    {
+      "role": "user",
+      "content": "berikan code html dong",
+      "timestamp": "2025-12-30T10:59:22.527Z",
+      "id": "msg-1767092362529-4az474240"
+    },
+    {
+      "role": "assistant",
+      "content": "Tentu! Saya membantu membuat kode HTML. Namun, saya perlu informasi lebih spesifik tentang apa yang Anda inginkan:\n\n1. **Jenis halaman web apa?** (contoh: landing page, blog, form kontak, dll.)\n2. **Fitur apa saja yang diperlukan?** (contoh: navigasi, gambar, tabel, form, dll.)\n3. **Gaya atau tema (contoh: modern, minimalis, colorful, theme, dll.)\n4. **Apakah perlu CSS dan JavaScript juga?**\n\nAtau jika ingin contoh HTML dasar, saya bisa memberikan template sederhana terlebih dahulu.\n\nApa yang Anda perlukan?",
+      "timestamp": "2025-12-30T10:59:28.340Z",
+      "id": "msg-1767092368345-4bit2pood"
+    }
+  ],
+  "metadata": {
+    "totalMessages": 2,
+    "userMessages": 1,
+    "assistantMessages": 1
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "watch": ["routes", "services", "middleware", "utils"],
+  "ignore": [
+    "node_modules/**",
+    "data/**",
+    "logs/**",
+    ".git/**",
+    "*.log",
+    "*.json"
+  ],
+  "ext": "js",
+  "delay": "2000"
+}

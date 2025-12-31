@@ -1,0 +1,36 @@
+{
+  "id": "chat-1767092413466-94kj7g3",
+  "createdAt": "2025-12-30T11:00:20.295Z",
+  "updatedAt": "2025-12-30T11:00:49.426Z",
+  "messages": [
+    {
+      "role": "user",
+      "content": "berikan code html dong",
+      "timestamp": "2025-12-30T11:00:20.295Z",
+      "id": "msg-1767092420296-kellwdqp2"
+    },
+    {
+      "role": "assistant",
+      "content": "Tentu! Saya bisa membantu Anda dengan kode HTML. Namun, untuk memberikan yang sesuai, bisa Anda jelaskan lebih spesifik?\n\nMisalnya:\n- Halaman web sederhana?\n- kontak?\n- Layout responsive?\n- Komponen tertentu (navbar, card, dll)?\n- Atau contoh basic HTML structure?\n\nAtau jika Anda ingin langsung lihat contoh, saya bisa buatkan template HTML untuk Anda. Apa yang Anda perlukan?",
+      "timestamp": "2025-12-30T11:00:24.312Z",
+      "id": "msg-1767092424313-z65kgs831"
+    },
+    {
+      "role": "user",
+      "content": "buat card aja",
+      "timestamp": "2025-12-30T11:00:34.739Z",
+      "id": "msg-1767092434739-wb952mdia"
+    },
+    {
+      "role": "assistant",
+      "content": "Berikut contoh kode HTML untuk card yang bisa Anda gunakan:\n\n```html\n<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n   <title>Contoh Card</title>\n   <style>\n        * {\n           margin:           padding: 0;\n            box-sizing: border-box;\n       }\n\n        body {\n            font-family: Arial,           background-color: #f0f0f0;\n            padding: 20px;\n      }\n\n       .card-container {\n           display: flex;\n          gap: 20px;\n           flex-wrap: wrap;\n            max-width: 1200px;\n           margin: 0 auto;\n       }\n\n        .card {\n           background: white;\n           border-radius: 8px;\n            box-shadow: 0 2px 10px rgba(0,0,0,0.1);\n          overflow: hidden;\n           transition: transform 0.3s ease, box-shadow 0.3s ease;\n           width: 300px;\n        }\n\n       .card:hover {\n           transform: translateY(-5px);\n           box-shadow: 5px 20px rgba(0,0,0,0.15);\n        }\n\n        .card-image            width: 100%;\n          height: 200px;\n            background-color: #e0e0e0;\n          display: flex;\n            align-items: center;\n           justify-content: center;\n            #666;\n            font-size: 18px;\n       }\n\n        .card-content {\n            padding: 20px;\n       }\n\n        {\n            font-size: 20px;\n           font-weight: bold;\n            margin-bottom:           color: #333;\n        }\n\n        .card-description            color: #666;\n           line-height: 1.6;\n           margin-bottom: 15px;\n       }\n\n        .card-button {\n           background-color: #007bff;\n            white;\n            border: none;\n           padding: 10px 20px;\n            5px;\n            cursor: pointer;\n          transition: background-color 0.3s ease;\n       }\n\n       .card-button:hover {\n            background-color: #0056b3;\n       }\n\n        Card varian kedua */\n        .card-2 {\n            border-left: 4px solid #28a745;\n       }\n\n        .card-2 .card-title {\n           color: #28a745;\n        }\n\n       Card varian ketiga */\n        .card-3 {\n           border: 2px solid #dc3545;\n        }\n\n        .card-3 {\n            color: #dc3545;\n      }\n    </style>\n</head>\n<body>\n    <div class=\"card-container\">\n       <!-- Card 1 - Default -->\n      <div class=\"card\">\n            <div class=\"card-image\">\n               📷 Gambar\n            </div>\n           <div class=\"card-content\">\n               <h3 class=\"card-title\">Card Biasa</h3>\n               <p class=\"card-description\">\n                   Ini adalah contoh card biasa dengan konten biasa. Card ini bisa digunakan untuk menampilkan informasi produk, artikel, profil.\n                </p>\n              <button class=\"card-button\">Selengkapnya</button>\n            </div>\n        </div>\n\n        <!-- Card 2 - Varian hijau -->\n        <div class=\"card card-2\">\n            <div class=\"card-image\">\n               🌟 Fitur Unggulan\n                      <div class=\"card-content\">\n                <h3 class=\"card-title\">Card Premium</h3>\n                <p class=\"card-description\">\n                    Card dengan accent warna hijau. Cocok untuk menampilkan fitur premium atau informasi penting.\n                </p>\n                <button class=\"card-button\">Coba Gratis</button>\n            </div>\n        </div>\n\n        <!-- Card 3 - Varian merah -->\n        <div class=\"card card-3\">\n          <div class=\"card-image\">\n                ⚠️ Peringatan\n            </div>\n            <div class=\"card-content\">\n               <h3 class=\"card-title\">Card Peringatan</h3>\n              <p class=\"card-description\">\n                    Card border merah untuk menampilkan informasi penting atau peringatan.\n               </p>\n               <button class=\"card-button\">Baca Selengkapnya</button>\n            </div>\n       </div>\n    </div>\n</body>\n</html>\n```\n\n**Features yang ada:**\n- 3 card (default, hijau, merah)\n- effect yang smooth\n- Layout responsive\n- Card dengan gambar placeholder\n-",
+      "timestamp": "2025-12-30T11:00:49.426Z",
+      "id": "msg-1767092449426-ro937zcag"
+    }
+  ],
+  "metadata": {
+    "totalMessages": 4,
+    "userMessages": 2,
+    "assistantMessages": 2
+  }
+}

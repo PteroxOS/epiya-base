@@ -1,0 +1,24 @@
+{
+  "id": "chat-1767092235576-uetcjoj",
+  "createdAt": "2025-12-30T10:57:15.585Z",
+  "updatedAt": "2025-12-30T10:57:19.358Z",
+  "messages": [
+    {
+      "role": "user",
+      "content": "mana?",
+      "timestamp": "2025-12-30T10:57:15.585Z",
+      "id": "msg-1767092235586-1mbztw3ep"
+    },
+    {
+      "role": "assistant",
+      "content": "Pertanyaan Anda \"mana?\" agak umum. Bisa Anda lebih spesifik apa yang ingin Anda tanyakan? \n\nMisalnya:\n- Lokasi tempat? (\"mana\" = \"where\")\n- Pilihan dari beberapa opsi? = \"which one\")\n- Atau hal lain?\n\nSilakan berikan konteks lebih detail agar saya bisa membantu dengan lebih baik.",
+      "timestamp": "2025-12-30T10:57:19.355Z",
+      "id": "msg-1767092239358-xp7f25zq5"
+    }
+  ],
+  "metadata": {
+    "totalMessages": 2,
+    "userMessages": 1,
+    "assistantMessages": 1
+  }
+}

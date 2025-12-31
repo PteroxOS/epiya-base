@@ -1,0 +1,48 @@
+{
+  "id": "chat-1767092059493-fk0x3hx",
+  "createdAt": "2025-12-30T10:54:21.816Z",
+  "updatedAt": "2025-12-30T10:55:19.654Z",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hai",
+      "timestamp": "2025-12-30T10:54:21.816Z",
+      "id": "msg-1767092061817-7azapxsml"
+    },
+    {
+      "role": "assistant",
+      "content": "Halo! Senang bertemu dengan Anda. Ada yang saya bantu hari ini?",
+      "timestamp": "2025-12-30T10:54:24.806Z",
+      "id": "msg-1767092064809-ichoz4p2p"
+    },
+    {
+      "role": "user",
+      "content": "berikan saya code website dong",
+      "timestamp": "2025-12-30T10:54:33.322Z",
+      "id": "msg-1767092073323-ntl26bujp"
+    },
+    {
+      "role": "assistant",
+      "content": "Tentu! Berikut contoh code website sederhana yang bisa Anda gunakan:\n\n```html\n<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Website Sederhana</title>\n    <style>\n        * {\n           0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n\n        body {\n            font-family: 'Arial', sans-serif;\n            line-height: 1.6;\n            color: #333;\n          background: #667eea 0%, #764ba2        }\n\n        .container {\n            max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n        }\n\n        header {\n           background: rgba(255, 255, 255, 0.1);\n            backdrop-filter: blur(10px);\n            padding: 20px 0;\n            text-align: center;\n           margin-bottom: 40px;\n            border-radius: 15px;\n        }\n\n       h1 {\n            color: white;\n           font-size: 3em;\n           10px;\n           text-shadow: 2px 2px 4px rgba(0,0,0,0.3);\n       }\n\n        .subtitle {\n           color: rgba(255, 255, 255,            font-size: 1.2em;\n        }\n\n        .content            background: rgba(255, 255, 255, 0.95);\n           padding: 40px;\n            border-radius: 15px;\n           box-shadow: 0 20px 40px rgba(0,0,0,0.1);\n            margin-bottom: 30px;\n       }\n\n       .features {\n            display: grid;\n           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: 30px;\n           margin: 40px 0;\n       }\n\n        .feature-card {\n            background: white;\n           padding: 30px;\n            border-radius: 10px;\n           box-shadow: 0 5px 15px rgba(0,0,0,0.1);\n            transition: transform 0.3s ease;\n       }\n\n        .feature-card:hover {\n            transform:        }\n\n        .feature-icon {\n            font-size:           margin-bottom: 15px;\n           block;\n        }\n\n       h2 {\n           color: #333;\n            margin-bottom: 20px;\n          font-size: 2em;\n        }\n\n        h3 {\n            color: #555;\n           margin-bottom: 15px;\n       }\n\n        .btn {\n            display: inline-block;\n          background: linear-gradient(45deg, #667eea, #764ba2);\n            color: white;\n          padding: 12px 30px;\n            text-decoration: none;\n            border-radius: 25px;\n            transition: all 0.3s ease;\n           border:           cursor: pointer;\n           font-size: 1em;\n        }\n\n        .btn:hover {\n            transform: translateY(-2px);\n            box-shadow: 0 5px 15px rgba(0,0,0,0.2);\n               footer {\n            text-align: center;\n           padding: 30px;\n            background: rgba(255, 255, 255, 0.1);\n           color: white;\n            border-radius: 15px;\n           backdrop-filter: blur(10px);\n        }\n\n        @media (max-width: 768px) {\n           h1 {\n                font-size: 2em;\n           }\n                      .container {\n              padding: 10px;\n            }\n            \n           .content {\n                padding: 20px;\n           }\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n       <header>\n            Website Sederhana</h1>\n           <p class=\"subtitle\">Contoh website modern dengan design yang menarik</p>\n        </header>\n\n        <div class=\"content\">\n            <h2>Selamat Datang!</h2>\n           <p>Ini adalah contoh website sederhana yang dibuat dengan HTML, CSS, dan JavaScript. Website ini menggunakan design modern dengan",
+      "timestamp": "2025-12-30T10:54:47.260Z",
+      "id": "msg-1767092087262-j8j5tlfku"
+    },
+    {
+      "role": "user",
+      "content": "mana?",
+      "timestamp": "2025-12-30T10:55:03.078Z",
+      "id": "msg-1767092103078-c670m52x5"
+    },
+    {
+      "role": "assistant",
+      "content": "Maaf, code-nya terpotong! Berikut code website yang lengkap dan siap pakai:\n\n```html\n<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n    <meta    <meta content=\"width=device-width, initial-scale=1.0\">\n    <title>Website Sederhana</title>\n   <style>\n        * {\n           margin: 0;\n           padding: 0;\n            box-sizing: border-box;\n        }\n\n        body {\n           font-family: 'Arial', sans-serif;\n            line-height: 1.6;\n            color: #333;\n           background: linear-gradient(135deg, #667eea 0%, #764ba2            min-height: 100vh;\n        }\n\n       .container {\n           max-width: 1200px;\n            margin: 0 auto;\n            padding: 20px;\n       }\n\n        header {\n            background: rgba(255, 255, 255, 0.1);\n            backdrop-filter: blur(10px);\n            padding: 20px 0;\n           text-align: center;\n           margin-bottom: 40px;\n            border-radius: 15px;\n            box-shadow: 0 8px 32px rgba(0,0,0,0.1);\n       }\n\n        h1 {\n            color: white;\n           font-size: 3em;\n            margin-bottom: 10px;\n           text-shadow: 2px rgba(0,0,0,0.3);\n       }\n\n       .subtitle {\n           color: rgba(255, 255, 255, 0.9);\n            font-size: 1.2em;\n               .content {\n            background: rgba(255, 255, 255, 0.95);\n          padding: 40px;\n           border-radius: 15px;\n           box-shadow: 0 20px 40px rgba(0,0,0,0.1);\n            margin-bottom: 30px;\n       }\n\n        .features {\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: 30px;\n           margin: 40px 0;\n        }\n\n        .feature-card {\n           background: white;\n            padding: 30px;\n            border-radius: 10px;\n           0 5px 15px rgba(0,0,0,0.1);\n           transition: transform 0.3s ease;\n            text-align: center;\n        }\n\n        .feature-card:hover {\n           transform: translateY(-5px);\n        }\n\n       .feature-icon {\n           font-size: 3em;\n            margin-bottom: 15px;\n            display: block;\n      }\n\n        h2 {\n            color: #333;\n           margin-bottom: 20px;\n            font-size: 2em;\n        }\n\n        h3 {\n            color: #555;\n           15px;\n        }\n\n        .btn {\n            display: inline-block;\n            background: linear-gradient(45deg, #667eea, #764ba2);\n            color: white;\n            padding: 12px 30px;\n            text-decoration: none;\n          border-radius: 25px;\n            transition: all 0.3s ease;\n            border: none;\n            cursor: pointer;\n            font-size: 1em;\n            10px 5px;\n        }\n\n        .btn:hover {\n           transform: translateY(-2px);\n           box-shadow: 5px 15px rgba(0,0,0,0.2);\n        }\n\n        footer {\n           text-align: center;\n            padding: 30px;\n           background: rgba(255, 255, 0.1);\n            color: white;\n            border-radius: 15px;\n           backdrop-filter: blur(10px);\n            margin-top: 40px;\n       }\n\n        @media (max-width: 768px) {\n            h1 {\n               font-size: 2em;\n           }\n            \n            .container                padding: 10px;\n            }\n                      .content {\n                padding:            }\n          </style>\n</head>\n<body>\n    <div class=\"container\">\n        <header>\n           <h1>🌟",
+      "timestamp": "2025-12-30T10:55:19.652Z",
+      "id": "msg-1767092119654-jx0gcctxs"
+    }
+  ],
+  "metadata": {
+    "totalMessages": 6,
+    "userMessages": 3,
+    "assistantMessages": 3
+  }
+}

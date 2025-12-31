@@ -1,0 +1,64 @@
+{
+  "conversations": {
+    "chat-1767091364584-upn3x6n": {
+      "createdAt": "2025-12-30T10:42:47.306Z",
+      "updatedAt": "2025-12-30T10:43:30.817Z",
+      "messageCount": 4,
+      "lastMessage": "hai"
+    },
+    "chat-1767091418199-q9np1ba": {
+      "createdAt": "2025-12-30T10:43:38.301Z",
+      "updatedAt": "2025-12-30T10:49:12.248Z",
+      "messageCount": 5,
+      "lastMessage": "hai"
+    },
+    "chat-1767091864966-7t1g67b": {
+      "createdAt": "2025-12-30T10:51:06.852Z",
+      "updatedAt": "2025-12-30T10:51:17.829Z",
+      "messageCount": 4,
+      "lastMessage": "Saya adalah EPIYA-AI, asisten AI yang ramah dirancang untuk memberikan bantuan yang akurat dan berma"
+    },
+    "chat-1767091987706-tgmxv7i": {
+      "createdAt": "2025-12-30T10:53:11.061Z",
+      "updatedAt": "2025-12-30T10:53:11.062Z",
+      "messageCount": 1,
+      "lastMessage": "hai anda siapa"
+    },
+    "chat-1767092059493-fk0x3hx": {
+      "createdAt": "2025-12-30T10:54:21.816Z",
+      "updatedAt": "2025-12-30T10:55:19.654Z",
+      "messageCount": 6,
+      "lastMessage": "Maaf, code-nya terpotong! Berikut code website yang lengkap dan siap pakai:\n\n```html\n<!DOCTYPE html>"
+    },
+    "chat-1767092235576-uetcjoj": {
+      "createdAt": "2025-12-30T10:57:15.585Z",
+      "updatedAt": "2025-12-30T10:57:19.358Z",
+      "messageCount": 2,
+      "lastMessage": "Pertanyaan Anda \"mana?\" agak umum. Bisa Anda lebih spesifik apa yang ingin Anda tanyakan? \n\nMisalnya"
+    },
+    "chat-1767092239763-77zzytd": {
+      "createdAt": "2025-12-30T10:57:19.769Z",
+      "updatedAt": "2025-12-30T10:58:20.120Z",
+      "messageCount": 4,
+      "lastMessage": "Berikut contoh code HTML sederhana:\n\n```html\n<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n    <meta chars"
+    },
+    "chat-1767092362517-v3cxm0x": {
+      "createdAt": "2025-12-30T10:59:22.527Z",
+      "updatedAt": "2025-12-30T10:59:28.345Z",
+      "messageCount": 2,
+      "lastMessage": "Tentu! Saya membantu membuat kode HTML. Namun, saya perlu informasi lebih spesifik tentang apa yang "
+    },
+    "chat-1767092413466-94kj7g3": {
+      "createdAt": "2025-12-30T11:00:20.295Z",
+      "updatedAt": "2025-12-30T11:00:49.426Z",
+      "messageCount": 4,
+      "lastMessage": "Berikut contoh kode HTML untuk card yang bisa Anda gunakan:\n\n```html\n<!DOCTYPE html>\n<html lang=\"id\""
+    },
+    "chat-1767092535484-7u30l9i": {
+      "createdAt": "2025-12-30T11:02:15.495Z",
+      "updatedAt": "2025-12-30T11:11:01.561Z",
+      "messageCount": 10,
+      "lastMessage": "Berikut code HTML sederhana dengan 1 section:\n\n```html\n<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n    <"
+    }
+  }
+}

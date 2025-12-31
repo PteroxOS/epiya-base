@@ -1,0 +1,42 @@
+{
+  "id": "chat-1767091418199-q9np1ba",
+  "createdAt": "2025-12-30T10:43:38.301Z",
+  "updatedAt": "2025-12-30T10:49:12.248Z",
+  "messages": [
+    {
+      "role": "user",
+      "content": "hai",
+      "timestamp": "2025-12-30T10:43:38.301Z",
+      "id": "msg-1767091418306-td4l62igs"
+    },
+    {
+      "role": "user",
+      "content": "hai",
+      "timestamp": "2025-12-30T10:43:38.881Z",
+      "id": "msg-1767091418881-kl4mkjtnw"
+    },
+    {
+      "role": "user",
+      "content": "hai",
+      "timestamp": "2025-12-30T10:47:38.292Z",
+      "id": "msg-1767091658293-79dz9aq5s"
+    },
+    {
+      "role": "user",
+      "content": "hai",
+      "timestamp": "2025-12-30T10:47:38.837Z",
+      "id": "msg-1767091658838-lrz7kp5pt"
+    },
+    {
+      "role": "user",
+      "content": "hai",
+      "timestamp": "2025-12-30T10:49:12.246Z",
+      "id": "msg-1767091752247-pdlz7ajg1"
+    }
+  ],
+  "metadata": {
+    "totalMessages": 5,
+    "userMessages": 5,
+    "assistantMessages": 0
+  }
+}
