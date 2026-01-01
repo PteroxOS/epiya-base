@@ -1,7 +1,7 @@
-// routes/chat.js - Chat routes with streaming support
+// routes/chat.js - Updated chat routes dengan unified AI service
 
 import express from 'express';
-import { aiAgent } from '../services/aiAgent.js';
+import { unifiedAIService } from '../services/unifiedAIService.js';
 import { conversationService } from '../services/conversationService.js';
 import { logger } from '../utils/logger.js';
 
@@ -10,7 +10,7 @@ const router = express.Router();
 // POST /api/v1/chat - Send message and get AI response
 router.post('/', async (req, res) => {
   const startTime = Date.now();
-  const { message, model, conversationId, history, stream = true } = req.body;
+  const { message, model, conversationId, history, temperature, stream = true } = req.body;
 
   // Validation
   if (!message || typeof message !== 'string' || message.trim().length === 0) {
@@ -29,6 +29,14 @@ router.post('/', async (req, res) => {
     });
   }
 
+  // Validate model if provided
+  if (model && !unifiedAIService.isValidModel(model)) {
+    return res.status(400).json({
+      error: 'Invalid model',
+      message: `Model '${model}' is not available. Use GET /api/v1/models to see available models.`
+    });
+  }
+
   logger.logRequest(req, {
     conversationId,
     model: model || 'default',
@@ -44,18 +52,67 @@ router.post('/', async (req, res) => {
       timestamp: new Date().toISOString()
     });
 
-    // Get AI response with streaming
+    // Get AI response with streaming (if supported by provider)
     if (stream) {
-      // Set headers for SSE (Server-Sent Events)
+      // Check if model supports streaming
+      const modelInfo = model ? unifiedAIService.getModelInfo(model) : null;
+      const supportsStreaming = !modelInfo || modelInfo.streaming !== false;
+
+      if (!supportsStreaming) {
+        // Fallback to non-streaming for models that don't support it
+        logger.debug('Model does not support streaming, using non-streaming mode', { model });
+        
+        const result = await unifiedAIService.chat({
+          message,
+          model,
+          history,
+          temperature,
+          stream: false
+        });
+
+        if (!result.success) {
+          throw new Error('Failed to get AI response');
+        }
+
+        await conversationService.addMessage(conversationId, {
+          role: 'assistant',
+          content: result.content,
+          timestamp: new Date().toISOString(),
+          metadata: {
+            model: result.model,
+            provider: result.provider
+          }
+        });
+
+        const duration = Date.now() - startTime;
+        logger.logResponse(req, res, duration, {
+          conversationId,
+          provider: result.provider
+        });
+
+        return res.json({
+          success: true,
+          response: result.content,
+          conversationId,
+          model: result.model,
+          provider: result.provider,
+          usage: result.usage,
+          duration,
+          streaming: false
+        });
+      }
+
+      // SSE Streaming for supported models
       res.setHeader('Content-Type', 'text/event-stream');
       res.setHeader('Cache-Control', 'no-cache');
       res.setHeader('Connection', 'keep-alive');
-      res.setHeader('X-Accel-Buffering', 'no'); // Disable nginx buffering
+      res.setHeader('X-Accel-Buffering', 'no');
 
-      const result = await aiAgent.chat({
+      const result = await unifiedAIService.chat({
         message,
         model,
         history,
+        temperature,
         stream: true
       });
 
@@ -76,15 +133,18 @@ router.post('/', async (req, res) => {
             if (data === '[DONE]') {
               res.write(`data: [DONE]\n\n`);
               
-              // Save assistant message
               conversationService.addMessage(conversationId, {
                 role: 'assistant',
                 content: fullContent,
-                timestamp: new Date().toISOString()
+                timestamp: new Date().toISOString(),
+                metadata: {
+                  model: result.model,
+                  provider: result.provider
+                }
               }).catch(err => logger.error('Failed to save assistant message', { error: err.message }));
 
               const duration = Date.now() - startTime;
-              logger.logAIInteraction(conversationId, model || 'default', chunkCount, fullContent.length, duration);
+              logger.logAIInteraction(conversationId, result.model || model || 'default', chunkCount, fullContent.length, duration);
               
               res.end();
               return;
@@ -121,10 +181,11 @@ router.post('/', async (req, res) => {
 
     } else {
       // Non-streaming response
-      const result = await aiAgent.chat({
+      const result = await unifiedAIService.chat({
         message,
         model,
         history,
+        temperature,
         stream: false
       });
 
@@ -136,13 +197,17 @@ router.post('/', async (req, res) => {
       await conversationService.addMessage(conversationId, {
         role: 'assistant',
         content: result.content,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        metadata: {
+          model: result.model,
+          provider: result.provider
+        }
       });
 
       const duration = Date.now() - startTime;
       logger.logResponse(req, res, duration, {
         conversationId,
-        tokensUsed: result.usage?.total_tokens || 0
+        provider: result.provider
       });
 
       res.json({
@@ -150,6 +215,7 @@ router.post('/', async (req, res) => {
         response: result.content,
         conversationId,
         model: result.model,
+        provider: result.provider,
         usage: result.usage,
         duration
       });
@@ -166,7 +232,7 @@ router.post('/', async (req, res) => {
     if (!res.headersSent) {
       res.status(500).json({
         error: 'Internal server error',
-        message: 'Failed to process chat request',
+        message: error.message || 'Failed to process chat request',
         conversationId
       });
     } else if (!res.writableEnded) {
@@ -176,44 +242,22 @@ router.post('/', async (req, res) => {
   }
 });
 
-// GET /api/v1/chat/models - Get available models
+// GET /api/v1/chat/models - Get available models (deprecated, use /api/v1/models)
 router.get('/models', (req, res) => {
-  const models = [
-    {
-      id: 'deepseek-coder-v2',
-      name: 'DeepSeek Coder V2',
-      description: 'Best for coding tasks and technical questions',
-      recommended: false
-    },
-    {
-      id: 'llama3.1:8b',
-      name: 'Llama 3.1 8B',
-      description: 'Fast general-purpose model for everyday conversations',
-      recommended: false
-    },
-    {
-      id: 'qwen2.5:1.5b',
-      name: 'Qwen 2.5 1.5B',
-      description: 'Lightweight and quick for simple queries',
-      recommended: false
-    },
-    {
-      id: 'MiniMax-M2',
-      name: 'MiniMax M2',
-      description: 'Balanced performance for various tasks',
-      recommended: false
-    },
-    {
-      id: 'MiniMax-M2-Stable',
-      name: 'MiniMax M2 Stable',
-      description: 'Stable release with reliable performance',
-      recommended: true
-    }
-  ];
+  const models = unifiedAIService.getAllModels();
+  const defaultModel = process.env.DEFAULT_MODEL || 'MiniMax-M2';
 
   res.json({
-    models,
-    default: process.env.DEFAULT_MODEL || 'MiniMax-M2-Stable'
+    success: true,
+    deprecated: true,
+    message: 'This endpoint is deprecated. Please use GET /api/v1/models instead.',
+    models: models.map(m => ({
+      id: m.id,
+      name: m.name,
+      description: m.description,
+      recommended: m.recommended
+    })),
+    default: defaultModel
   });
 });
 

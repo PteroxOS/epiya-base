@@ -1,4 +1,4 @@
-// server.js - Main Express Server untuk EPIYA-AI Terminal Backend
+// server.js - Main Express Server dengan Multi-Provider Support
 
 import express from 'express';
 import cors from 'cors';
@@ -6,6 +6,7 @@ import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import dotenv from 'dotenv';
 import { chatRouter } from './routes/chat.js';
+import { modelsRouter } from './routes/models.js';
 import { conversationRouter } from './routes/conversation.js';
 import { healthRouter } from './routes/health.js';
 import { errorHandler } from './middleware/errorHandler.js';
@@ -56,8 +57,8 @@ app.use(cors({
 
 // Rate Limiting - Anti DDoS
 const generalLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
+  windowMs: 15 * 60 * 1000,
+  max: 100,
   message: { error: 'Too many requests, please try again later.' },
   standardHeaders: true,
   legacyHeaders: false,
@@ -71,8 +72,8 @@ const generalLimiter = rateLimit({
 });
 
 const chatLimiter = rateLimit({
-  windowMs: 1 * 60 * 1000, // 1 minute
-  max: 20, // 20 requests per minute for chat
+  windowMs: 1 * 60 * 1000,
+  max: 20,
   message: { error: 'Too many chat requests, please wait.' },
   standardHeaders: true,
   legacyHeaders: false,
@@ -93,7 +94,24 @@ app.use(securityMiddleware);
 // API Routes
 app.use('/api/v1/health', healthRouter);
 app.use('/api/v1/chat', chatLimiter, chatRouter);
+app.use('/api/v1/models', modelsRouter);  // NEW: Model management routes
 app.use('/api/v1/conversations', conversationRouter);
+
+// Root endpoint - API info
+app.get('/', (req, res) => {
+  res.json({
+    name: process.env.AI_NAME || 'EPIYA-AI',
+    version: '2.0.0',
+    description: 'Multi-Provider AI Backend API',
+    endpoints: {
+      health: '/api/v1/health',
+      chat: '/api/v1/chat',
+      models: '/api/v1/models',
+      conversations: '/api/v1/conversations'
+    },
+    documentation: 'https://github.com/yourusername/epiya-ai-backend'
+  });
+});
 
 // Error handling
 app.use(errorHandler);
@@ -131,6 +149,7 @@ const server = app.listen(PORT, () => {
   logger.info(`🌐 Environment: ${process.env.NODE_ENV || 'development'}`);
   logger.info(`🤖 AI Name: ${process.env.AI_NAME || 'EPIYA-AI'}`);
   logger.info(`✅ Allowed Origins: ${allowedOrigins.join(', ')}`);
+  logger.info(`🎯 Multi-Provider Support: Local + Minitool (GPT)`);
   logger.info('='.repeat(60));
 });
 
